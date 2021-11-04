@@ -10,8 +10,6 @@ I herein cover:
 
 >> FOUNDATIONS OF C++
 >
->> BASICS OF DOCKER
->
 >>TENSORFLOW USING CPP
 
 
@@ -23,9 +21,9 @@ DISCLAIMER:
 The material written on this file was prepared 
 from October 2021 (in my first year of University)
 and gives information based on my Personal research
-and personal reads NOT YEARS OF EXPERIENCE.
-Accordingly, therefore, I give credit to teh following
-people for providing easility understandable information
+and personal reads not years of experience.
+Accordingly, therefore, I give credit to the following
+people for providing easily understandable information
 that has been key in helping me chart out my way in 
 programming with C++
 
