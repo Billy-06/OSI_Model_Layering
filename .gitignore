@@ -1,6 +1,7 @@
 *.idea
 *.vs
 *.vsidx
+*.vscode
 *.suo
 .vs/*
 .vs
