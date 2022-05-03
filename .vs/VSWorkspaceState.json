@@ -1,9 +1,15 @@
 {
+  "ActiveTargetSystem": "WSL: kali-linux",
+  "MRUPresetsPerTargetSystem": {
+    "Local Machine": {
+      "configure": "x64-debug"
+    }
+  },
   "ExpandedNodes": [
     "",
     "\\Chapter 1 - Getting Started",
     "\\Chapter 3"
   ],
-  "SelectedNode": "\\Chapter 1 - Getting Started\\validation.cpp",
+  "SelectedNode": "\\Chapter 1 - Getting Started\\CMakePresets.json",
   "PreviewInSolutionExplorer": false
 }

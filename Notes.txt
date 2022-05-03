@@ -1,0 +1,84 @@
+Application
+
+Presentation
+
+Session
+
+Transport (mainly TCP or UDP)
+Functions:
+Establishes a Session - TCP is a connection-oriented protocol that negotiates and establishes a permanent connection (or session) between source and destination devices prior to forwarding any traffic. Through session establishment, the devices negotiate the amount of traffic that can be forwarded at a given time, and the communication data between the two can be closely managed.
+Ensures Reliable Delivery - For many reasons, it is possible for a segment to become corrupted or lost completely, as it is transmitted over the network. TCP ensures that each segment that is sent by the source arrives at the destination.
+Provides Same-Order Delivery - Because networks may provide multiple routes that can have different transmission rates, data can arrive in the wrong order. By numbering and sequencing the segments, TCP ensures segments are reassembled into the proper order.
+Supports Flow Control - Network hosts have limited resources (i.e., memory and processing power). When TCP is aware that these resources are overtaxed, it can request that the sending application reduce the rate of data flow. This is done by TCP regulating the amount of data the source transmits. Flow control can prevent the need for retransmission of the data when the resources of the receiving host are overwhelmed.
+
+Fields:
+Header (size_ = 20 Bytes)
+TCP Header Field		Description
+Source Port			A 16-bit field used to identify the source application by port number.
+Destination Port		A 16-bit field used to identify the destination application by port number.
+Sequence Number			A 32-bit field used for data reassembly purposes.
+Acknowledgment Number		A 32-bit field used to indicate that data has been received and the next byte expected from the source.
+Header Length			A 4-bit field known as ʺdata offsetʺ that indicates the length of the TCP segment header.
+Reserved			A 6-bit field that is reserved for future use.
+Control bits			A 6-bit field that includes bit codes, or flags, which indicate the purpose and function of the TCP segment.
+Window size			A 16-bit field used to indicate the number of bytes that can be accepted at one time.
+Checksum			A 16-bit field used for error checking of the segment header and data.
+Urgent				A 16-bit field used to indicate if the contained data is urgent.
+
+
+UDP
+Functions:
+Data is reconstructed in the order that it is received.
+Any segments that are lost are not resent.
+There is no session establishment.
+The sending is not informed about resource availability.
+
+Fields:
+Header (size_ = 8 bytes)
+
+UDP Header Field 		Description
+Source Port 			A 16-bit field used to identify the source application by port number.
+Destination Port		A 16-bit field used to identify the destination application by port number.
+Length 				A 16-bit field that indicates the length of the UDP datagram header.
+Checksum 			A 16-bit field used for error checking of the datagram header and data.
+
+
+Network
+Functions:
+[ Addressing end devices (IPv4 or IPv6), Encapsulation, Routing,
+De-encapsulation ]
+>> IPv4 Packet (size_ = 20bytes)
+>> [ (Version, Internet Header Length), (DS, DSCP, ECN), Total Length, Identification,
+	Flag, Fragmented Offset, Time-to-Live, Protocol, Header Checksum, Source IP Adress, Destination IP Address
+]
+
+Significant fields in the IPv4 header include the following:
+
+Version - 			Contains a 4-bit binary value set to 0100 that identifies this as an IPv4 packet.
+Differentiated Services or DiffServ (DS) - Formerly called the type of service (ToS) field, the DS field is an 8-bit field used to determine the priority of each packet. The six most significant bits of the DiffServ field are the differentiated services code point (DSCP) bits and the last two bits are the explicit congestion notification (ECN) bits.
+Time to Live (TTL) – 		TTL contains an 8-bit binary value that is used to limit the lifetime of a packet. The source device of the IPv4 packet sets the initial TTL value. It is decreased by one each time the packet is processed by a router. If the TTL field decrements to zero, the router discards the packet and sends an Internet Control Message Protocol (ICMP) Time Exceeded message to the source IP address. Because the router decrements the TTL of each packet, the router must also recalculate the Header Checksum.
+Protocol – 			This field is used to identify the next level protocol. This 8-bit binary value indicates the data payload type that the packet is carrying, which enables the network layer to pass the data to the appropriate upper-layer protocol. Common values include ICMP (1), TCP (6), and UDP (17).
+Header Checksum – 		This is used to detect corruption in the IPv4 header.
+Source IPv4 Address – 		This contains a 32-bit binary value that represents the source IPv4 address of the packet. The source IPv4 address is always a unicast address.
+Destination IPv4 Address – 	This contains a 32-bit binary value that represents the destination IPv4 address of the packet. The destination IPv4 address is a unicast, multicast, or broadcast address.
+
+
+>> IPv6 (size_ = 40 bytes)
+>> [ Version, Traffic Class, Flow Label, Payload Length, Next Header, Hop Limit, Source IP Address, Destination IP Address ]
+
+Version - This field contains a 4-bit binary value set to 0110 that identifies this as an IP version 6 packet.
+Traffic Class - This 8-bit field is equivalent to the IPv4 Differentiated Services (DS) field.
+Flow Label - This 20-bit field suggests that all packets with the same flow label receive the same type of handling by routers.
+Payload Length - This 16-bit field indicates the length of the data portion or payload of the IPv6 packet. This does not include the length of the IPv6 header, which is a fixed 40-byte header.
+Next Header - This 8-bit field is equivalent to the IPv4 Protocol field. It indicates the data payload type that the packet is carrying, enabling the network layer to pass the data to the appropriate upper-layer protocol.
+Hop Limit - This 8-bit field replaces the IPv4 TTL field. This value is decremented by a value of 1 by each router that forwards the packet. When the counter reaches 0, the packet is discarded, and an ICMPv6 Time Exceeded message is forwarded to the sending host,. This indicates that the packet did not reach its destination because the hop limit was exceeded. Unlike IPv4, IPv6 does not include an IPv6 Header Checksum, because this function is performed at both the lower and upper layers. This means the checksum does not need to be recalculated by each router when it decrements the Hop Limit field, which also improves network performance.
+Source IPv6 Address - This 128-bit field identifies the IPv6 address of the sending host.
+Destination IPv6 Address - This 128-bit field identifies the IPv6 address of the receiving host.
+
+
+
+DataLink
+Fields:
+[ FrameStart, Addressing, Type, Control, Data, Error Detection, FrameStop ]
+
+Physical => Outputs bit values (electrical signals or light signals)

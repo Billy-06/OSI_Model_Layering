@@ -1,34 +1,26 @@
->TECHNICAL SOFTWARE DEVELOPMENT
-
-This course covers the fundamentals 
-of programming in C++. Giving a Software Engineer's
-Approach to programming with C++. You are required 
-to have some experience with programming in order to
-benefit from this repo.
-
-I herein cover:
-
->> FOUNDATIONS OF C++
->
->>TENSORFLOW USING CPP
+# Author:
+Billy Ndegwah Micah
+billyndegz13@gmail.com
 
 
+# Project Description:
+## What:
+This Project Aims at presenting the OSI model layers and each of their 
+components and to mimick the packet handling of modern systems.
 
+## When:
+After being intrigued by just how many abstractions and protocols there are 
+between the user and the Physical layer, and what fascinating an opportunity
+to play around with algorithms within the in-between layers, I wanted to makes
+something that would attempt to mimick the existing network systems and yet
+still allow room for exploratory coding with my favourite language C++
 
+## Who:
+Any one can use my code for whatever reason they may please, however I am in 
+no way responsible for any software faults that might arise in the use of this 
+code. I have developed it for personal sport and not for implementation in 
+working environments. Have fun as you try,test and read the code.
 
-
-DISCLAIMER:
-The material written on this file was prepared 
-from October 2021 (in my first year of University)
-and gives information based on my Personal research
-and personal reads not years of experience.
-Accordingly, therefore, I give credit to the following
-people for providing easily understandable information
-that has been key in helping me chart out my way in 
-programming with C++
-
-(i) Swinburne University of Technology Sarawak
-
-(ii) Bill Weinman [bw.org as at October 2021]
-
-(iii) Victor Shtern for his book A Software Engineer's Approach.
+## Why:
+I'm using this project to challenge my understanding of the OSI model as well 
+as my understanding of C++
