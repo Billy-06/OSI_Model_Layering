@@ -2,3 +2,6 @@
 *.vs
 *.vsidx
 *.suo
+.vs
+.idea
+.vscode
